@@ -1,17 +1,22 @@
-import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getSongsFetch } from "../../features/songsState";
-import store from "../../features/store";
-import "../../shared/global.css";
+
+import store from "../../store";
+import MyForm from "../../components/MyForm";
+import SongList from "../../components/songList";
+import { isOpen } from "../../features/slice/modalSlice";
+import { PageContainer } from "../../shared/globalStyle";
 
 const Playlist = () => {
-  const songs = useSelector((store) => store.songs.songs);
+  const songs = useSelector((store) => store.songs);
+  const { isOpen, isupdating } = useSelector((store) => store.modal);
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getSongsFetch());
-  }, [dispatch]);
-  console.log(songs);
-  return <div className="page-container">Hello World</div>;
+
+  return (
+    <PageContainer>
+      {isOpen && <MyForm />}
+      {<SongList />}
+    </PageContainer>
+  );
 };
 
 export default Playlist;

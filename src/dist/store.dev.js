@@ -9,21 +9,29 @@ var _toolkit = require("@reduxjs/toolkit");
 
 var _reduxSaga = _interopRequireDefault(require("redux-saga"));
 
-var _songsState = _interopRequireDefault(require("./songsState"));
+var _songs = _interopRequireDefault(require("./features/slice/songs"));
 
-var _songsSaga = _interopRequireDefault(require("./songsSaga"));
+var _song = _interopRequireDefault(require("./features/slice/song"));
+
+var _index = require("./features/saga/index");
+
+var _modalSlice = _interopRequireDefault(require("./features/slice/modalSlice"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var sagaMiddleware = (0, _reduxSaga["default"])();
 var store = (0, _toolkit.configureStore)({
   reducer: {
-    songs: _songsState["default"]
+    song: _song["default"],
+    songs: _songs["default"],
+    modal: _modalSlice["default"]
   },
   middleware: function middleware(getDefaultMiddleware) {
-    return getDefaultMiddleware().concat(sagaMiddleware);
+    return getDefaultMiddleware({
+      thunk: false
+    }).concat(sagaMiddleware);
   }
 });
-sagaMiddleware.run(_songsSaga["default"]);
+sagaMiddleware.run(_index.rootSaga);
 var _default = store;
 exports["default"] = _default;

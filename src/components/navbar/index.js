@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 
 const Navbar = () => {
   const [image, setImage] = useState(
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdLAY3C19kL0nV2bI_plU3_YFCtra0dpsYkg&usqp=CAU"
+    "https://i.pinimg.com/474x/bf/74/56/bf745694ac40df8c1dd6068ac9f2101d.jpg"
   );
   return (
     <div className="navbar-container">

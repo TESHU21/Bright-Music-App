@@ -10,7 +10,7 @@ const NavbarButton = (props) => {
   return (
     <Link to={props.to}>
       <div className={btnClass}>
-        <IconContext.Provider value={{ size: "24px", className: "btn-icon" }}>
+        <IconContext.Provider value={{ size: "12px", className: "btn-icon" }}>
           {props.icon}
           <p className="btn-title"> {props.title}</p>
         </IconContext.Provider>
