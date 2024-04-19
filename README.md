@@ -13,7 +13,15 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
-### npm run server 
-Run the Json server to enable the CRUD operation of the app fully functional
 
+## Alternatively
 
+you can checkout deployed site on Netlify such as the json-server deployed to render.com and
+the fronend part deployed to Netlify
+
+## Site Link:https://bright-music.netlify.app/
+
+##
+
+If you have any question and sugession please reach me at
+email:teshu2124@@gmail.com
